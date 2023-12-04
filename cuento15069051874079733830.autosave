@@ -1,0 +1,161 @@
+class cuento {
+  constructor() {
+    this.estado = 0;
+    this.fotos=[];
+    this.relatos=[];
+    this.botones = [];
+    this.i=0;
+    this.mipreload();
+    this.cargarBotones();
+  }
+
+  background() {
+    image( this.fotos[this.i], 0, 0, width, height );
+  }
+
+  mipreload() {
+    this.fotos.push( loadImage('data/foto'+this.i+'.png') );
+
+    this.relatos[0]="PINOCHO";
+    this.relatos[1]="Geppetto, un buen carpintero, crea a Pinocho y el hada mágica le da vida, convirtiéndolo en un muñeco de madera viviente y cumpliendo él sueño de tener un hijo.";
+    this.relatos[2]="Pinocho quiere hacer amigos y le pide a su padre que lo deje ir a estudiar a la escuela.";
+    this.relatos[3]="De camino a la escuela. Pinocho se encuentra con dos nenes malos que le Invitan a hacer travesuras en la ciudad.";
+    this.relatos[4]="Pinocho decide involucrarse en travesuras y desobedece las normas alejandose así de Geppetto.";
+    this.relatos[5]="Pinocho asiste a la escuela y se destaca en sus estudios, conoce a nuevos amigos y aprende lecciones valiosas.";
+    this.relatos[6]="Pinocho, como recompensa por ser un buen niño se convierte en uno de verdad, de carne y hueso y vive feliz junto a Geppeto.";
+    this.relatos[7]="Pepito Grillo no encontró salida y Pinocho y Geppetto son tragados por la ballena.";
+    this.relatos[8]="Pinocho es entregado a un circo donde lo obligan a trabajar. Pinocho tiene mucho miedo e implora al titiritero que le perdone con lágrimas en los ojos.";
+    this.relatos[9]="El hada buena hechiza a Pinocho por su mal comportamiento y le pone unas orejas de burro y una nariz que va a crecer cada vez que el mienta";
+    this.relatos[10]="Pinocho no volvió a su casa y termina siendo utilizado por personas malas para sacar dinero de él. Esta elección lleva a un final desafortunado para Pinocho, ya que pierde la oportunidad de redimirse y su historia termina en tragedia.";
+    this.relatos[11]="Pinocho regresa a casa y encuentra a Geppeto en peligro, por ir a buscarlo por el mar y ser tragado por una ballena por eso decide rescatarlo y le pide ayuda a grillo.";
+    this.relatos[12]="Pinocho ignora los consejos del grillo y sigue a los nenes malos.";
+    this.relatos[13]="Pepito grillo no pudo encontrar escapatoria y padre e hijo son tragados por la ballena.";
+  }
+  cargarBotones() {
+    this.botones.push(new boton(100, 50, "Comenzar", this.cambiarEstado.bind(this, 1), 1));
+    this.botones.push(new boton(100, 50, "Creditos", this.cambiarEstado.bind(this, 13), 13));
+    //this.botones.push(new boton();
+    //this masbotones;
+    //let masbotones = new boton ();
+  }
+
+  estados() {
+    if (this.estado == 0) {
+      image(this.fotos[0], 0, 0);
+      this.botones[0].dibujar(250, 300); 
+      this.botones[1].dibujar(250, 400); 
+      text(this.relatos[0], width / 2, 50);
+      estado++;
+    } else if (this.estado== 1) {
+     // image( this.fotos[1], 0, 0);
+      //this.botones[2].dibujar();
+      text(this.relatos[1], 100, 100, 400, 200);
+}
+    } //else if (this.estado== 2) {
+    //  // image(this.fotos[2], 0, 0);
+    //  this.miboton.dibujar(300, 350, "Geppeto decide que\nira a la escuela");
+    //  this.miboton.dibujar(300, 430, "Geppeto decide que\nestudiara en casa ");
+    //  text(this.relatos[2], width/2, 100, 400, 500);
+    ////} else if (this.estado== 3) {
+    //  image(this.foto[3], 0, 0);
+    //  noStroke();
+    //  fill(0, 200, 100);
+    //  rect(150, 300, 150, 70);
+    //  rect(400, 300, 150, 70);
+    //  textSize(25);
+    //  fill(0);
+    //  text(this.relatos[3], width/2, 100, 400, 500);
+    //  //opciones con A y B
+    //  text("PRESIONA A\n Pinocho decide ir\nhacia la escuela", 150, 300);
+    //  text("PRESIONA B\n Pinocho decide ir\ncon los nenes malos", 400, 300);
+    //} else if (this.estado== 4) {
+    //  image(this.foto[4], 0, 0 );
+    //  fill(0);
+    //  text(this.relatos[5], width/2, 100, 400, 500);
+    //  this.miboton.dibujar(300, 500, "Siguiente");
+    //} else if (this.estado== 5) {
+    //  image(this.foto[5], 0, 0);
+    //  textSize(25);
+    //  text(this.relatos[4], width/2, 100, 500, 500);
+    //  this.miboton.dibujar(300, 500, "Y que le sucede?");
+    //}
+    ////FINAL FELIZ
+    //else if (this.estado== 6) {
+    //  image(this.foto[6], 0, 0);
+    //  fill(50, 200, 200);
+    //  textSize(25);
+    //  text(this.relatos[6], width/2, 130, 500, 500);
+    //  textSize(40);
+    //  fill(200, 200, 0);
+    //  text("FINAL", 300, 27);
+    //  this.miboton.dibujar(500, 500, 100, "VOLVER", 0);
+    //} else if (this.estado== 7) {
+    //  image(this.foto[9], 0, 0);
+    //  textSize(25);
+    //  text(this.relatos[12], width/2, 100, 500, 500);
+    //  this.miboton.dibujar(300, 500, "Siguiente");
+    //} else if (this.estado== 8) {
+    //  image(this.foto[7], 0, 0);
+    //  text(this.relatos[11], width/2, 100, 500, 500);
+    //  this.miboton.dibujar(300, 350, "Pepito grillo NO\nencuentra salida");
+    //  this.miboton.dibujar(300, 430, "Pepito grillo\nencuentra salida");
+    //}
+    ////FINAL TRAGICO ;(
+    //else if (this.estado== 9) {
+    //  image(this.foto[8], 0, 0);
+    //  fill(255);
+    //  text(this.relatos[13], width/2, 200, 400, 500);
+    //  text("FINAL", 300, 350);
+    //  this.miboton.dibujar(100, 100, "VOLVER");
+    //} else if (this.estado== 10) {
+    //  image(this.foto[11], 0, 0);
+    //  text(this.relatos[8], width/2, 100, 550, 500);
+    //  this.miboton.dibujar(300, 350, "Comefuego se\nconmueve y lo libera");
+    //  this.miboton.dibujar(300, 430, "Comefuego se rie de el y\nlo obligando a trabajar");
+    //} else if (this.estado== 11) {
+    //  image(this.foto[10], 0, 0);
+    //  text(this.relatos[9], width/2, 100, 550, 500);
+    //  this.miboton.dibujar(300, 350, "Pinocho no\nobedece al hada");
+    //  this.miboton.dibujar(300, 430, "Pinocho pide perdon\ny vuelve a su casa");
+    //}
+    ////oTRO FINAL TRAGICO ;((
+    //else if (this.estado== 12) {
+    //  image(this.foto[12], 0, 0);
+    //  fill(0, 0, 255);
+    //  text(this.relatos[10], width/2, 490, 550, 500);
+    //  text("FINAL", 300, 350);
+    //  this.miboton.dibujar(480, 50, "VOLVER");
+    //} else if (this.estado== 13) {
+    //  image(this.foto[13], 0, 0);
+    //  this.miboton.dibujar(480, 50, "VOLVER");
+    //  fill(255);
+    //  text("AUTOR - Carlo Collodi\nDIRECTORA - Cortizo Pilar\nPROGRAMADORA - Cortizo Pilar", 10, height/2.5);
+    //}
+  
+apretarBoton() {
+  if (this.botones[0].funciona(250, 300) && this.estado == 0) {
+    console.log("Cambiando al estado 1");
+    this.estado = 1;
+  } else if (this.botones[1].funciona(250, 400) && this.estado == 1) {
+    this.estado = 2;
+  }
+}
+  //else if (this.miboton.funciona(300, 280) && this.estado == 1) {
+  //    this.estado = 7;
+  //  } else if (this.miboton.funciona(300, 500) && this.estado == 2) {
+  //    this.estado = 3;
+  //  } else if (this.miboton.funciona(300, 500) && this.estado == 3) {
+  //    this.estado = 4;
+  //  } else if (this.miboton.funciona(300, 500) && this.estado == 3) {
+  //    this.estado = 9;
+  //  } else if (this.miboton.funciona(300, 500) && this.estado == 4) {
+  //    this.estado = 5;
+  //  } else if (this.miboton.funciona(300, 500) && this.estado == 5) {
+  //    this.estado = 6;
+  //  } else if (this.miboton.funciona(300, 500) && this.estado == 6) {
+  //    this.estado = 0;
+
+  cambiarEstado(nuevoEstado) {
+    this.estado = nuevoEstado;
+  }
+}
